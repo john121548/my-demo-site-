@@ -143,7 +143,7 @@ body.no-scroll {
     display: none; 
     background: none;
     border: none;
-    color: var(--light-text);
+    color: var(--light-text); /* اللون الافتراضي أبيض */
     font-size: 1.8em; 
     cursor: pointer;
     padding: 5px 10px;
@@ -156,12 +156,42 @@ body.no-scroll {
 .hamburger-menu.active .icon-close { display: inline-block; transform: rotate(0deg); }
 
 
-/* Hero Section Styles - (No changes here, kept for context) */
-.hero { background: url('images/main-bg.jpg') center/cover no-repeat fixed; color: var(--light-text); text-align: center; padding: 120px 0; position: relative; display: flex; align-items: center; justify-content: center; min-height: 70vh; }
-.hero::after { content: ""; position: absolute; top:0; right:0; left:0; bottom:0; background: rgba(0, 25, 70, 0.65); z-index: 1; } 
-.hero .hero-content { position: relative; z-index: 2; max-width: 700px; }
-.hero h1 { font-size: 3.2em; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
-.hero p { font-size: 1.35em; margin-bottom: 40px; line-height: 1.7; }
+/* Hero Section Styles */
+.hero {
+    background: url('images/main-bg.jpg') center/cover no-repeat fixed; 
+    color: var(--light-text);
+    text-align: center;
+    /* padding: 120px 0; تم تعديله أدناه ليكون متجاوبًا */
+    position: relative;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* ***** تعديل: استخدام vh لارتفاع متجاوب ***** */
+    padding: 60px 20px; /* ***** تعديل: padding متجاوب ***** */
+}
+.hero::after { 
+    content: ""; 
+    position: absolute; 
+    top:0; right:0; left:0; bottom:0; 
+    background: rgba(0, 25, 70, 0.70); /* ***** تعديل: زيادة شفافية التراكب قليلاً ***** */
+    z-index: 1; 
+} 
+.hero .hero-content { 
+    position: relative; 
+    z-index: 2; 
+    max-width: 700px; 
+}
+.hero h1 { 
+    font-size: 2.8em; /* ***** تعديل: تصغير حجم الخط الرئيسي قليلاً ***** */
+    margin-bottom: 15px; /* ***** تعديل: تقليل الهامش السفلي ***** */
+    font-weight: 700; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); 
+}
+.hero p {
+    font-size: 1.2em; /* ***** تعديل: تصغير حجم الخط الفرعي قليلاً ***** */
+    margin-bottom: 30px; /* ***** تعديل: تقليل الهامش السفلي ***** */
+    line-height: 1.6;
+}
 
 /* General Button Styles - (No changes here, kept for context) */
 .btn { background: var(--secondary-color); color: var(--light-text); padding: 14px 35px; border: 2px solid transparent; border-radius: 50px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed); text-decoration: none; display: inline-block; box-shadow: 0 3px 8px rgba(0,0,0,0.15); position: relative; overflow: hidden; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -274,44 +304,86 @@ footer { background: var(--footer-bg); color: #adb5bd; padding: 50px 0 0 0; flex
 .loading-text { text-align: center; width: 100%; padding: 20px; color: #777; }
 p.product-description-modal { font-size: 0.9em; color: #666; min-height: 3.6em; line-height: 1.5; }
 
-/* Floating Buttons - (No changes here, kept for context) */
-.whatsapp-float { position: fixed; width: 55px; height: 55px; bottom: 25px; left: 25px; background-color: #25D366; color: var(--light-text); border-radius: 50%; text-align: center; font-size: 1.8em; box-shadow: 0 3px 10px rgba(0,0,0,0.25); z-index: 100; display: flex; align-items: center; justify-content: center; transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; }
+/* Floating Buttons */
+.whatsapp-float { 
+    position: fixed; 
+    width: 55px; 
+    height: 55px; 
+    bottom: 25px; 
+    left: 25px;  /* سيتم عكسه تلقائيًا لليمين في RTL */
+    background-color: #25D366; 
+    color: var(--light-text); 
+    border-radius: 50%; 
+    text-align: center; 
+    font-size: 1.8em;  
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25); 
+    z-index: 100; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; 
+}
 .whatsapp-float i { line-height: 0; } 
 .whatsapp-float:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-#scrollToTopBtn { display: none; position: fixed; bottom: 90px; left: 25px; z-index: 99; border: none; outline: none; background-color: var(--primary-color); color: white; cursor: pointer; width: 45px; height: 45px; border-radius: 50%; font-size: 1.2em; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: background-color var(--transition-speed), opacity 0.3s, visibility 0.3s, transform var(--transition-speed); align-items: center; justify-content: center; opacity: 0; visibility: hidden; }
-#scrollToTopBtn.visible { display: flex; opacity: 1; visibility: visible; }
+
+#scrollToTopBtn { 
+    display: none;  
+    position: fixed; 
+    bottom: 90px;  
+    left: 25px;  /* سيتم عكسه تلقائيًا لليمين في RTL */
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: var(--primary-color); 
+    color: white; 
+    cursor: pointer; 
+    width: 45px; height: 45px; 
+    border-radius: 50%; 
+    font-size: 1.2em; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    transition: background-color var(--transition-speed), opacity 0.3s, visibility 0.3s, transform var(--transition-speed); 
+    align-items: center; /* تم إزالة display: flex من هنا، سيتم التحكم به بالـ JS */
+    justify-content: center; 
+    opacity: 0; 
+    visibility: hidden;
+}
+#scrollToTopBtn.visible { 
+    display: flex; /* يظهر كـ flex عند التفعيل */
+    opacity: 1;
+    visibility: visible;
+}
 #scrollToTopBtn:hover { background-color: var(--secondary-color); transform: scale(1.1); }
 #scrollToTopBtn i { line-height: 0; }
 
 /* Responsive Design */
 /* Styles for screens larger than 768px (Desktop and larger tablets) */
 @media (min-width: 769px) { 
-    .main-nav ul#navLinks { display: flex !important; } /* Ensure horizontal nav is shown */
-    .hamburger-menu { display: none !important; } /* Ensure hamburger is hidden */
+    .main-nav ul#navLinks { display: flex !important; } 
+    .hamburger-menu { display: none !important; } 
 }
 
 /* Styles for screens 768px and smaller (Tablets and Mobile) */
 @media (max-width: 768px) { 
     .main-nav ul#navLinks:not(.active) { 
-        display: none !important; /* Hide horizontal nav if side nav is not active */
+        display: none !important; 
     }
     .main-nav ul#navLinks.active { 
         display: flex !important; 
         flex-direction: column; 
         position: fixed; 
         top: 0; 
-        right: 0; 
+        right: 0; /* للقائمة التي تنزلق من اليمين (لـ RTL) */
         width: 280px; 
         max-width: 80%; 
         height: 100vh; 
         background-color: var(--primary-color); 
         padding-top: 70px; 
         box-shadow: -3px 0 8px rgba(0,0,0,0.25); 
-        transform: translateX(100%); /* Start off-screen to the right for RTL */
+        transform: translateX(100%); /* مخفية إلى اليمين */
         transition: transform 0.35s ease-in-out; 
         z-index: 999; 
     }
-    .main-nav ul#navLinks.active { transform: translateX(0); } /* Slide in from the right */
+    .main-nav ul#navLinks.active { transform: translateX(0); } /* إظهار القائمة */
     .main-nav ul#navLinks li { width: 100%; text-align: right;  padding-right: 25px; box-sizing: border-box;  }
     .main-nav ul#navLinks a.nav-link { display: block; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.1em; width: 100%; }
     .main-nav ul#navLinks li:last-child a.nav-link { border-bottom: none; }
@@ -319,21 +391,45 @@ p.product-description-modal { font-size: 0.9em; color: #666; min-height: 3.6em; 
     .main-nav ul#navLinks a.nav-link.active { background-color: var(--secondary-color); color: var(--light-text); }
     .main-nav ul#navLinks a.nav-link::after { display: none; } 
 
-    .hamburger-menu { display: block;  z-index: 1001;  }
+    .hamburger-menu { 
+        display: block;  
+        z-index: 1001;
+        color: var(--light-text); /* ***** تعديل: تأكيد لون أيقونة الهمبرجر ***** */
+    }
     
-    .hero h1 { font-size: 2.2em; }
-    .hero p { font-size: 1.1em; }
+    .hero { padding: 80px 20px; min-height: 60vh; } /* ***** تعديل: تقليل ارتفاع الهيرو للجوال ***** */
+    .hero h1 { font-size: 2em; } /* ***** تعديل: تصغير الخط الرئيسي للهيرو ***** */
+    .hero p { font-size: 1.05em; margin-bottom: 25px; } /* ***** تعديل: تصغير الخط الفرعي للهيرو ***** */
+    .btn { padding: 12px 28px; font-size: 1em; } /* ***** تعديل: تصغير حجم الزر قليلاً ***** */
+
     .section-title { font-size: 2em; }
     .card, .gallery .gallery-item { width: calc(100% - 20px); max-width: 380px; } 
     .modal-content { width: 95%; margin-top: 5%; padding: 20px; } 
     #modalProductList { max-height: 70vh; } 
     .product-item-modal { width: 100%; max-width: none; }
     .social-media-contact ul { flex-direction: column; gap: 10px;} 
-    .whatsapp-float { width: 50px; height: 50px; bottom: 20px; left: 20px; font-size: 1.5em; }
-    #scrollToTopBtn { bottom: 80px; left: 20px; width: 40px; height: 40px; font-size: 1em;} 
+    .whatsapp-float { 
+        width: 50px; 
+        height: 50px; 
+        bottom: 20px; 
+        left: 20px; /* سيبقى على اليسار بسبب position:fixed */
+        font-size: 1.5em; 
+        /* ***** تعديل: تأكيد لون أيقونة الواتساب إذا كانت الأيقونة نفسها لا تحتوي على لون ***** */
+        /* color: #fff;  */
+    }
+    #scrollToTopBtn { 
+        bottom: 80px; 
+        left: 20px; /* سيبقى على اليسار بسبب position:fixed */
+        width: 40px; 
+        height: 40px; 
+        font-size: 1em;
+        /* ***** تعديل: تأكيد لون أيقونة السهم إذا كانت الأيقونة نفسها لا تحتوي على لون ***** */
+        /* color: #fff; */
+    } 
     .footer-content { grid-template-columns: 1fr; text-align: center; } 
     .footer-section h4::after { right: 50%; transform: translateX(50%); } 
 }
+
 
 /* أنيميشن خفيف لظهور الأقسام */
 .services, .portfolio, .contact, .spare-parts-section, .testimonials { 

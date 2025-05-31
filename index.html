@@ -2,104 +2,198 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>Alex Trading</title>
+    <title>Alex Trading - قطع غيار ماكينات الخياطة</title>
+    <meta name="description" content="Alex Trading متخصصون في توفير جميع قطع غيار ماكينات الخياطة، صيانة الماكينات، وجميع مستلزمات الملابس. جودة عالية وخدمة ممتازة.">
+    <meta name="keywords" content="قطع غيار, ماكينات خياطة, سنجر, أوفر, أورليه, إبر, صيانة ماكينات, مستلزمات ملابس, Alex Trading, الإسكندرية">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/favicon.png" type="image/png"> </head>
 <body>
     <header>
         <div class="container header-container">
-            <a href="index.html#home" class="logo"> <img src="images/logo.png" alt="Alex Trading Logo">
+            <a href="index.html#home" class="logo"> 
+                <img src="images/logo.png" alt="Alex Trading Logo">
             </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">الرئيسية</a></li>
-                    <li><a href="index.html#services">الخدمات</a></li>
-                    <li><a href="index.html#portfolio">المعرض</a></li>
-                    <li><a href="index.html#contact">تواصل معنا</a></li>
+            <nav class="main-nav">
+                <button class="hamburger-menu" id="hamburgerMenu" aria-label="فتح القائمة" aria-expanded="false">
+                    <i class="fas fa-bars icon-open"></i> 
+                    <i class="fas fa-times icon-close"></i> 
+                </button>
+                <ul id="navLinks">
+                    <li><a href="index.html#home" class="nav-link">الرئيسية</a></li>
+                    <li><a href="index.html#services" class="nav-link">الخدمات</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">المعرض</a></li>
+                    <li><a href="index.html#testimonials" class="nav-link">آراء العملاء</a></li>
+                    <li><a href="index.html#contact" class="nav-link">تواصل معنا</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>مرحباً بك في AlexTrading</h2>
-            <p>نقدم لك كل قطع الغيار وماكينات الخياطة</p>
-            <a href="#services" class="btn">تعرف على خدماتنا</a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>مرحباً بك في AlexTrading</h1>
+                <p>وجهتك الأولى لجميع قطع غيار ماكينات الخياطة ومستلزماتها في الإسكندرية</p>
+                <a href="#services" class="btn btn-primary"><span>اكتشف خدماتنا</span></a>
+            </div>
+        </section>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">خدماتنا</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <h3>قطع غيار</h3>
-                    <p>جميع قطع غيار الماكينات.</p>
+        <section id="services" class="services section-padding">
+            <div class="container">
+                <h2 class="section-title">خدماتنا المتميزة</h2>
+                <div class="service-cards">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-cogs"></i></div> 
+                        <h3>قطع غيار أصلية</h3>
+                        <p>نوفر تشكيلة واسعة من قطع الغيار الأصلية لجميع أنواع ماكينات الخياطة.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-tools"></i></div>
+                        <h3>صيانة احترافية</h3>
+                        <p>فريق متخصص لصيانة وإصلاح ماكينات الخياطة مع ضمان على الخدمة.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-tshirt"></i></div>
+                        <h3>مستلزمات الخياطة</h3>
+                        <p>كل ما تحتاجه من إبر، خيوط، وأدوات خياطة عالية الجودة.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>صيانة الماكينات</h3>
-                    <p>ضمان 3 سنين علي الماكينات</p>
+            </div>
+        </section>
+
+        <section id="spare-buttons-section" class="spare-parts-section section-padding">
+            <div class="container">
+                <h2 class="section-title">أقسام قطع الغيار الرئيسية</h2>
+                <p class="section-subtitle">تصفح أقسامنا للعثور على ما تحتاجه بسهولة</p>
+                <div class="spare-buttons">
+                    <a href="#" class="btn spare-btn" id="openSingerModalBtn"><span>سنجر</span></a> 
+                    <a href="#" class="btn spare-btn" data-category="over"><span>أوفر</span></a> 
+                    <a href="#" class="btn spare-btn" data-category="orleh"><span>أورليه</span></a> 
+                    <a href="#" class="btn spare-btn" data-category="needles"><span>إبر</span></a> 
                 </div>
-                <div class="card">
-                    <h3>مستلزمات الملابس</h3>
-                    <p>جميع مستلزمات الملابس.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio section-padding">
+            <div class="container">
+                <h2 class="section-title">من معرض أعمالنا ومنتجاتنا</h2>
+                <div class="gallery">
+                    <div class="gallery-item"><a href="images/project1_large.jpg" data-lightbox="portfolio" data-title="ماكينة سنجر موديل X"><img src="images/project1.jpg" alt="ماكينة سنجر"></a></div>
+                    <div class="gallery-item"><a href="images/shop_front_large.jpg" data-lightbox="portfolio" data-title="واجهة محل Alex Trading"><img src="images/shop-front.jpg" alt="واجهة المحل"></a></div>
+                    <div class="gallery-item"><a href="images/project2_large.jpg" data-lightbox="portfolio" data-title="مجموعة إبر متنوعة"><img src="images/project2.jpg" alt="إبر خياطة"></a></div>
+                    <div class="gallery-item"><a href="images/project3_large.jpg" data-lightbox="portfolio" data-title="قطع غيار داخلية"><img src="images/project3.jpg" alt="قطع غيار ماكينات"></a></div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials section-padding">
+            <div class="container">
+                <h2 class="section-title">ماذا يقول عملاؤنا</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <img src="images/client1.jpg" alt="عميل 1" class="testimonial-img">
+                        <p>"خدمة ممتازة وقطع غيار أصلية. أنصح بشدة بالتعامل مع Alex Trading!"</p>
+                        <h4>- أحمد محمود</h4>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="images/client2.jpg" alt="عميلة 2" class="testimonial-img">
+                        <p>"وجدت كل ما أحتاجه لماكينتي لديهم، وفريق الصيانة محترف جدًا."</p>
+                        <h4>- فاطمة علي</h4>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="images/client3.jpg" alt="عميل 3" class="testimonial-img">
+                        <p>"أسعار مناسبة وجودة عالية. شكراً Alex Trading على خدمتكم الرائعة."</p>
+                        <h4>- محمد حسن</h4>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+                </div>
+        </section>
 
-    <section id="spare-buttons-section" class="spare-parts-section">
-        <div class="container">
-            <h2 class="section-title">أقسام قطع الغيار</h2>
-            <div class="spare-buttons">
-                <a href="#" class="btn spare-btn" id="openSingerModalBtn">سنجر</a> 
-                <a href="#" class="btn spare-btn" data-category="over">أوفر</a> 
-                <a href="#" class="btn spare-btn" data-category="orleh">أورليه</a> 
-                <a href="#" class="btn spare-btn" data-category="needles">إبر</a> 
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-subtitle">نسعد باستقبال استفساراتكم وطلباتكم</p>
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">الاسم الكامل:</label>
+                                <input type="text" id="contactName" name="name" placeholder="ادخل اسمك الكامل" required>
+                                <small class="form-error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">البريد الإلكتروني:</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="ادخل بريدك الإلكتروني" required>
+                                <small class="form-error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">رسالتك:</label>
+                                <textarea id="contactMessage" name="message" placeholder="اكتب رسالتك هنا..." rows="5" required></textarea>
+                                <small class="form-error-message"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit"><span>إرسال الرسالة</span></button>
+                        </form>
+                        <div id="formMessage" class="form-status-message"></div>
+                    </div>
+                    <div class="contact-details">
+                        <h3>معلومات التواصل المباشر:</h3>
+                        <p><i class="fas fa-phone-alt"></i> هاتف: <a href="tel:+201070598888">+20 1070598888</a></p>
+                        <p><i class="fas fa-envelope"></i> بريد إلكتروني: <a href="mailto:info@alextrading.com">info@alextrading.com</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> العنوان: 123 شارع المثال، الإسكندرية، مصر</p>
+                        <div class="social-media-contact-inline">
+                            <a href="https://wa.me/+201070598888" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a> 
+                            <a href="YOUR_FACEBOOK_PAGE_URL" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="YOUR_INSTAGRAM_PROFILE_URL" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="location-map">
+                    <h3>موقعنا على الخريطة:</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.691998599769!2d29.91610781500727!3d31.20009218147462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c3ead938999b%3A0x8d1b3378547f720!2sAlexandria%2C%20Alexandria%20Governorate!5e0!3m2!1sen!2seg!4v1622550000000!5m2!1sen!2seg" 
+                        width="100%" height="350" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    </div>
             </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">المعرض</h2>
-            <div class="gallery">
-                <img src="images/project1.jpg" alt="مشروع 1">
-                <img src="images/shop-front.jpg" alt="واجهة المحل">
-                <img src="images/project2.jpg" alt="مشروع 2">
-                <img src="images/project3.jpg" alt="مشروع 3">
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">تواصل معنا</h2>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="الاسم" required>
-                <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-                <textarea name="message" placeholder="رسالتك" required></textarea>
-                <button type="submit" class="btn">إرسال</button>
-            </form>
-            <div id="formMessage"></div>
-            <div class="location">
-                <h3>موقعنا على الخريطة</h3>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.582734290063!2d29.91692761503469!3d31.205753981474673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c4950e3508c7%3A0x93dbcd359ffd3287!2sAlexandria%2C%20Alexandria%20Governorate%2C%20Egypt!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" 
-                    width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
     <footer>
-        <div class="container">
-            <p>جميع الحقوق محفوظة © <span id="currentYear"></span> | Alex Trading</p>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="images/logo_white.png" alt="Alex Trading Logo White"> 
+            </div>
+            <div class="footer-section footer-links">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="index.html#home">الرئيسية</a></li>
+                    <li><a href="index.html#services">الخدمات</a></li>
+                    <li><a href="index.html#portfolio">المعرض</a></li>
+                    <li><a href="index.html#contact">تواصل معنا</a></li>
+                    <li><a href="privacy.html">سياسة الخصوصية (مثال)</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact-info">
+                <h4>معلومات التواصل</h4>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+201070598888">+20 1070598888</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@alextrading.com">info@alextrading.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 شارع المثال، الإسكندرية، مصر</p>
+            </div>
+            <div class="footer-section footer-social-media">
+                <h4>تابعنا على</h4>
+                <div class="footer-social-links">
+                    <a href="https://wa.me/+201070598888" target="_blank" title="واتساب" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="YOUR_FACEBOOK_PAGE_URL" target="_blank" title="فيسبوك" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="YOUR_INSTAGRAM_PROFILE_URL" target="_blank" title="انستغرام" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text">جميع الحقوق محفوظة © <span id="currentYear"></span> | Alex Trading. تصميم وتطوير بواسطة [اسمك/شركتك]</p>
         </div>
     </footer>
 
@@ -108,11 +202,17 @@
             <span class="modal-close-btn">&times;</span>
             <h3 id="modalTitle">منتجات القسم</h3>
             <div id="modalProductList" class="product-list">
-                <p>جاري تحميل المنتجات...</p>
+                <p class="loading-text">جاري تحميل المنتجات...</p>
             </div>
         </div>
     </div>
 
+    <a href="https://wa.me/+201070598888" class="whatsapp-float" target="_blank" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button id="scrollToTopBtn" title="العودة للأعلى" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script src="script.js"></script>
-</body>
+    </body>
 </html>

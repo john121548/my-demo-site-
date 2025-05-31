@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Alex Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html#home" class="logo"> <img src="images/logo.png" alt="Alex Trading Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">الرئيسية</a></li>
+                    <li><a href="index.html#services">الخدمات</a></li>
+                    <li><a href="index.html#portfolio">المعرض</a></li>
+                    <li><a href="index.html#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>مرحباً بك في AlexTrading</h2>
+            <p>نقدم لك كل قطع الغيار وماكينات الخياطة</p>
+            <a href="#services" class="btn">تعرف على خدماتنا</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>قطع غيار</h3>
+                    <p>جميع قطع غيار الماكينات.</p>
+                </div>
+                <div class="card">
+                    <h3>صيانة الماكينات</h3>
+                    <p>ضمان 3 سنين علي الماكينات</p>
+                </div>
+                <div class="card">
+                    <h3>مستلزمات الملابس</h3>
+                    <p>جميع مستلزمات الملابس.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="spare-buttons-section" class="spare-parts-section">
+        <div class="container">
+            <h2 class="section-title">أقسام قطع الغيار</h2>
+            <div class="spare-buttons">
+                <a href="#" class="btn spare-btn" id="openSingerModalBtn">سنجر</a> 
+                <a href="#" class="btn spare-btn" data-category="over">أوفر</a> 
+                <a href="#" class="btn spare-btn" data-category="orleh">أورليه</a> 
+                <a href="#" class="btn spare-btn" data-category="needles">إبر</a> 
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">المعرض</h2>
+            <div class="gallery">
+                <img src="images/project1.jpg" alt="مشروع 1">
+                <img src="images/shop-front.jpg" alt="واجهة المحل">
+                <img src="images/project2.jpg" alt="مشروع 2">
+                <img src="images/project3.jpg" alt="مشروع 3">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="الاسم" required>
+                <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+                <textarea name="message" placeholder="رسالتك" required></textarea>
+                <button type="submit" class="btn">إرسال</button>
+            </form>
+            <div id="formMessage"></div>
+            <div class="location">
+                <h3>موقعنا على الخريطة</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.582734290063!2d29.91692761503469!3d31.205753981474673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c4950e3508c7%3A0x93dbcd359ffd3287!2sAlexandria%2C%20Alexandria%20Governorate%2C%20Egypt!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" 
+                    width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © <span id="currentYear"></span> | Alex Trading</p>
+        </div>
+    </footer>
+
+    <div id="productsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <h3 id="modalTitle">منتجات القسم</h3>
+            <div id="modalProductList" class="product-list">
+                <p>جاري تحميل المنتجات...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

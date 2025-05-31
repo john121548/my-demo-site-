@@ -1,0 +1,443 @@
+/* Global Styles & Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background: #f4f6fb; /* لون خلفية أفتح قليلاً */
+    color: #333; /* لون نص أغمق قليلاً لتحسين التباين */
+    line-height: 1.6; /* تحسين قابلية القراءة */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* استخدام auto للمحاذاة الأفقية */
+    padding: 0 15px; /* إضافة padding جانبي صغير للحاويات */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #00205b 60%, #003580 100%);
+    color: #fff;
+    padding: 15px 0; /* تقليل الـ padding قليلاً */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* تعديل الظل ليكون أكثر نعومة */
+    position: sticky; /* جعل الهيدر ثابت عند التمرير */
+    top: 0;
+    z-index: 1000; /* ضمان بقاء الهيدر في الأعلى */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 70px; /* تعديل ارتفاع الشعار */
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* إزالة الهامش العلوي */
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* تقليل المسافة بين عناصر القائمة قليلاً */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em; /* تعديل حجم الخط */
+    padding: 8px 12px; /* إضافة padding لسهولة النقر */
+    border-radius: 4px; /* إضافة انحناء بسيط للحواف */
+    transition: color 0.2s, background-color 0.2s;
+}
+
+nav a:hover, nav a.active { /* إضافة كلاس active للصفحة الحالية */
+    color: #e30613;
+    background-color: rgba(255, 255, 255, 0.1); /* تغيير لون الخلفية عند المرور */
+}
+
+/* Hero Section Styles */
+.hero {
+    background: url('images/main-bg.jpg') center/cover no-repeat; /* تأكد من وجود الصورة */
+    color: #fff;
+    text-align: center;
+    padding: 80px 0 70px 0; /* تعديل الـ padding */
+    position: relative;
+    background-position: 0% 50%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top:0; right:0; left:0; bottom:0;
+    background: rgba(0, 25, 70, 0.75); /* تعديل شفافية اللون الأزرق الداكن */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 2.8em; /* تكبير الخط قليلاً */
+    margin-bottom: 20px;
+    font-weight: 700; /* استخدام وزن أثقل للخط */
+}
+
+.hero p {
+    font-size: 1.2em; /* تعديل حجم الخط */
+    margin-bottom: 30px;
+    max-width: 600px; /* تحديد عرض أقصى للفقرة */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* General Button Styles */
+.btn {
+    background: #e30613;
+    color: #fff;
+    padding: 12px 30px; /* تعديل الـ padding */
+    border: none;
+    border-radius: 30px; /* زيادة انحناء الحواف */
+    font-size: 1.05em; /* تعديل حجم الخط */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* إضافة ظل خفيف للأزرار */
+}
+
+.btn:hover {
+    background: #00205b;
+    color: #fff;
+    transform: translateY(-2px); /* تأثير رفع بسيط عند المرور */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Section Title Styles */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px; /* زيادة الهامش السفلي */
+    font-size: 2.2em; /* تعديل حجم الخط */
+    color: #00205b;
+    font-weight: 700;
+}
+
+/* Services Section Styles */
+.services {
+    background: #fff;
+    padding: 70px 0; /* زيادة الـ padding */
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* تعديل المسافة */
+    justify-content: center;
+}
+
+.card { /* يستخدم هذا الكلاس أيضاً لبطاقات المنتجات في النافذة المنبثقة */
+    background: #f9f9f9;
+    border-radius: 12px; /* تعديل انحناء الحواف */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* تعديل الظل */
+    padding: 25px 20px; /* تعديل الـ padding */
+    width: 320px; /* تعديل العرض */
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-align: center; /* محاذاة النص في البطاقة */
+    margin-bottom: 20px; /* هامش سفلي للبطاقات */
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02); /* تعديل تأثير المرور */
+    box-shadow: 0 10px 20px rgba(0, 90, 180, 0.15); /* تعديل ظل المرور */
+}
+
+.card h3 {
+    color: #e30613;
+    margin-top: 0; /* إزالة الهامش العلوي */
+    margin-bottom: 15px; /* زيادة الهامش السفلي */
+    font-size: 1.4em;
+}
+
+.card p {
+    font-size: 0.95em;
+    color: #555; /* لون أغمق قليلاً للنص */
+}
+.card .price {
+    font-weight: bold;
+    color: #0078d7; /* لون مميز للسعر */
+    margin-top: 10px;
+}
+
+
+/* Spare Parts Buttons Section Styles */
+.spare-parts-section {
+    padding: 50px 0;
+    background: #f4f6fb; /* نفس خلفية الجسم */
+}
+
+.spare-parts-section .container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spare-buttons { 
+    display: flex;
+    flex-wrap: wrap; /* السماح بالتفاف الأزرار على الشاشات الصغيرة */
+    gap: 15px; /* تعديل المسافة */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* تقليل الهامش العلوي */
+}
+
+.spare-btn { 
+    background-color: #003580; 
+}
+.spare-btn:hover {
+    background-color: #e30613;
+}
+
+
+/* Portfolio Section Styles */
+.portfolio {
+    background: #fff; 
+    padding: 70px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.gallery img {
+    border-radius: 10px; 
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+    width: 300px; 
+    height: 220px; 
+    object-fit: cover;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.gallery img:hover {
+    transform: scale(1.06); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Contact Section Styles */
+.contact {
+    background: #f4f6fb; 
+    padding: 70px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; 
+    max-width: 500px; 
+    margin: 0 auto 30px auto; 
+}
+
+input, textarea {
+    padding: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    font-size: 1em;
+    resize: vertical; 
+    background-color: #fff; 
+}
+
+input:focus, textarea:focus {
+    border-color: #00509e; 
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2); 
+}
+
+#formMessage {
+    margin-top: 15px;
+    color: #0078d7; 
+    font-weight: bold;
+    text-align: center;
+}
+
+.location { 
+    margin-top: 40px; 
+    text-align: center;
+}
+.location h3 {
+    margin-bottom: 20px;
+    color: #00205b;
+}
+.location iframe {
+    border: none; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer Styles */
+footer {
+    background: #00205b;
+    color: #bbb; 
+    text-align: center;
+    padding: 25px 0; 
+    margin-top: 50px; 
+}
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    padding-top: 30px; /* تقليل المسافة من الأعلى قليلاً */
+    display: flex; /* استخدام flex لتوسيط المحتوى */
+    align-items: center; /* توسيط عمودي */
+    justify-content: center; /* توسيط أفقي */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    /* margin: 5% auto;  تمت إزالته بسبب استخدام flex في .modal */
+    padding: 25px;
+    border: 1px solid #888;
+    width: 90%; /* زيادة العرض الافتراضي */
+    max-width: 850px; /* زيادة العرض الأقصى للنافذة */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation-name: modalopen;
+    animation-duration: 0.4s;
+    display: flex; /* استخدام flex لترتيب العناصر الداخلية */
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: scale(0.9) translateY(-30px);} /* تعديل الأنيميشن */
+    to {opacity: 1; transform: scale(1) translateY(0);}
+}
+
+.modal-close-btn {
+    color: #aaa;
+    float: left; /* لتكون على اليسار في واجهة عربية */
+    font-size: 30px; /* تكبير زر الإغلاق قليلاً */
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 20px; /* تعديل لليسار */
+    line-height: 1; /* لضمان محاذاة أفضل للرمز × */
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalTitle {
+    text-align: center;
+    color: #00205b;
+    margin-bottom: 25px;
+    font-size: 1.8em; /* تكبير عنوان النافذة */
+}
+
+#modalProductList {
+    display: flex; /* استخدام flex لعرض المنتجات */
+    flex-wrap: wrap; /* السماح بالتفاف المنتجات */
+    justify-content: center; /* ***** هذا هو المسؤول عن توسيط العناصر ***** */
+    gap: 20px; /* المسافة بين بطاقات المنتجات */
+    max-height: 70vh; /* زيادة الارتفاع الأقصى لقائمة المنتجات */
+    overflow-y: auto; /* إضافة شريط تمرير إذا تجاوز المحتوى الارتفاع */
+    padding: 10px; /* إضافة padding داخلي لقائمة المنتجات */
+}
+
+.product-item-modal { /* تعديل كلاس بطاقة المنتج داخل المودال */
+    width: calc(50% - 20px); /* عرض بطاقتين في الصف مع مسافة بينهما */
+    /* يمكنك تعديل هذا لثلاث بطاقات إذا كانت الشاشة تسمح: calc(33.333% - 20px) */
+    max-width: 350px; /* تحديد عرض أقصى لكل بطاقة منتج */
+    min-width: 280px; /* تحديد عرض أدنى لضمان عدم صغر البطاقات بشكل كبير */
+    box-sizing: border-box; /* لضمان أن padding و border لا يزيدان العرض */
+}
+
+
+.product-modal-image { 
+    width:100%; 
+    max-width:150px; /* حجم أكبر قليلاً للصورة داخل المودال */
+    height:auto; 
+    margin-bottom:15px; /* زيادة الهامش السفلي للصورة */
+    border-radius:8px; /* زيادة انحناء حواف الصورة */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #eee; /* إضافة حدود خفيفة للصورة */
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) { 
+    .hero h2 { font-size: 2.4em; }
+    .hero p { font-size: 1.1em; }
+    .card { width: calc(50% - 20px); }
+    .gallery img { width: calc(50% - 15px); }
+    .modal-content { width: 90%; max-width: 800px; } /* تعديل عرض المودال */
+    .product-item-modal {
+        width: calc(50% - 15px); /* بطاقتان في الصف للشاشات المتوسطة */
+    }
+}
+
+@media (max-width: 768px) { 
+    .header-container { flex-direction: column; gap: 10px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav a { font-size: 0.95em; padding: 6px 10px; }
+    .hero { padding: 60px 0 50px 0; }
+    .hero h2 { font-size: 2em; }
+    .hero p { font-size: 1em; }
+    .section-title { font-size: 1.8em; margin-bottom: 35px; }
+    .service-cards, .gallery { flex-direction: column; align-items: center; }
+    .card, .gallery img { width: 90%; max-width: 380px; }
+    .card { width: calc(100% - 20px); max-width: 400px; }
+    .gallery img { width: calc(100% - 20px); max-width: 400px; height: auto; }
+    form { max-width: 90%; }
+    .modal-content { width: 95%; margin-top: 5%; padding: 20px; } /* تعديل هامش المودال */
+    #modalProductList { max-height: 75vh; } /* زيادة الارتفاع الأقصى قليلاً */
+    .product-item-modal {
+        width: calc(100% - 10px); /* بطاقة واحدة في الصف للشاشات الصغيرة */
+        max-width: 320px; /* تعديل العرض الأقصى للبطاقة */
+    }
+    #modalTitle { font-size: 1.6em; }
+}
+
+@media (max-width: 480px) { 
+    .logo img { height: 60px; }
+    .hero h2 { font-size: 1.8em; }
+    .hero p { font-size: 0.9em; }
+    .btn { padding: 10px 25px; font-size: 1em; }
+    .section-title { font-size: 1.6em; }
+    .card h3 { font-size: 1.2em; }
+    .modal-content { padding: 15px; }
+    #modalTitle { font-size: 1.4em; }
+    .product-modal-image { max-width: 120px; }
+}
